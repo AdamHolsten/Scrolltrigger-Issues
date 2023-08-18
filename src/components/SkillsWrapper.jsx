@@ -13,13 +13,6 @@ const SkillsWrapper = () => {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      // ScrollTrigger.create({
-      //   trigger: element,
-      //   start: "top 90%",
-      //   toggleActions: "play none none reverse",
-      //   animation: tl,
-      // }),
-      // gsap.to(".right-item-list", {
       let mm = gsap.matchMedia();
       mm.add(
         {
@@ -32,10 +25,9 @@ const SkillsWrapper = () => {
           let tl = gsap.timeline({
             scrollTrigger: {
               trigger: "#circle-container",
-              // trigger: "#item-collection",
               start: "top top",
               end: "+=100%",
-              pin: isDesktop ? false : "#circle-wrap",
+              pin: isDesktop ? false : true,
               pinSpacing: false,
               toggleActions: "play none none reverse",
               anticipatePin: 1,
@@ -48,10 +40,7 @@ const SkillsWrapper = () => {
           let tlLine = gsap.timeline({
             scrollTrigger: {
               trigger: "ul",
-              // pin: true, // pin the trigger element while active
               start: "top 60%",
-
-              // markers: true,
             },
           });
           tlLine.fromTo(
@@ -88,26 +77,6 @@ const SkillsWrapper = () => {
           );
         }
       );
-      // gsap.utils.toArray(".slide-up").forEach((elem) => {
-      //   gsap.fromTo(
-      //     elem,
-      //     // elem! as gsap.DOMTarget,
-      //     {
-      //       y: 100,
-      //       opacity: 0,
-      //     },
-      //     {
-      //       scrollTrigger: {
-      //         trigger: elem,
-      //         start: "-80px bottom",
-      //       },
-      //       duration: 2,
-      //       // ease: 'expo.out',
-      //       y: 0,
-      //       opacity: 1,
-      //     }
-      //   );
-      // });
     }, component); // <- selector scoping
     return () => ctx.revert();
   }, []);
@@ -121,25 +90,25 @@ const SkillsWrapper = () => {
           <ItemList
             heading="Skills & Exp."
             items={[
-              { item: "Front-End Development", exp: "8+ years" },
-              { item: "Web Design", exp: "5+ years" },
-              { item: "Photo & Video", exp: "5+ years" },
-              { item: "Web Animation", exp: "2+ years" },
+              { item: "Item Title", exp: "Secondary Text" },
+              { item: "Item Title", exp: "Secondary Text" },
+              { item: "Item Title", exp: "Secondary Text" },
+              { item: "Item Title", exp: "Secondary Text" },
             ]}
             resume
           />
           <ItemList
             heading="Technologies"
             items={[
-              { item: "HTML" },
-              { item: "CSS & SCSS" },
-              { item: "PHP" },
-              { item: "Javascript" },
-              { item: "Greensock" },
-              { item: "React" },
-              { item: "Vue & Nuxt" },
-              { item: "WordPress, ACF & Gutenberg" },
-              { item: "Adobe Creative Cloud" },
+              { item: "Item Title" },
+              { item: "Item Title" },
+              { item: "Item Title" },
+              { item: "Item Title" },
+              { item: "Item Title" },
+              { item: "Item Title" },
+              { item: "Item Title" },
+              { item: "Item Title" },
+              { item: "Item Title" },
             ]}
           />
         </div>
@@ -148,13 +117,13 @@ const SkillsWrapper = () => {
         <div id="circle-wrap" className=" full-height">
           <div id="skill-circle">
             <h2 id="first-circle-header">
-              I possess extensive experience in crafting interactive and
-              captivating websites.
+              ONE: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do
             </h2>
 
             <h2 id="second-circle-header">
-              I consistently stay current with the latest relevant technologies
-              and skills.
+              TWO: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do
             </h2>
           </div>
         </div>
