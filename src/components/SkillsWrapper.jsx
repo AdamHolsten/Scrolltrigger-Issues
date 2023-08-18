@@ -22,6 +22,8 @@ const SkillsWrapper = () => {
         (context) => {
           // eslint-disable-next-line no-unused-vars
           let isDesktop = context.isDesktop;
+
+          // Sets Scrolltrigger pin for circle
           let tl = gsap.timeline({
             scrollTrigger: {
               trigger: "#circle-container",
@@ -35,8 +37,11 @@ const SkillsWrapper = () => {
               markers: true,
             },
           });
+
+          // Circle starts hidden
           tl.fromTo("#circle-wrap", { autoAlpha: 0 }, { autoAlpha: 1 }, 0);
 
+          // Creates timeline
           let tlLine = gsap.timeline({
             scrollTrigger: {
               trigger: "ul",
